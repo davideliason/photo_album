@@ -17,18 +17,23 @@ function handle_requests(req, res) {
 
     loadAlbumList((err, data) => {
         if (err) {
-            console.log("error");
+            res.writeHead(500, {
+                "Content-Type": "application/json"
+            });
+            res.end(JSON.stringify(err));
             return;
         }
         console.log(`Number of album groups: ${data}`);
-    });
 
-    res.writeHead(200, {
-        "Content-Type": "application/json"
+        res.writeHead(200, {
+            "Content-Type": "application/json",
+        });
+
+        res.end(JSON.stringify({
+            error: null,
+            albums: data
+        }) + "\n");
     });
-    res.end(JSON.stringify({
-        error: null
-    }) + "\n");
 }
 
 
