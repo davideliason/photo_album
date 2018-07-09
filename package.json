@@ -1,0 +1,28 @@
+{
+  "name": "photo_album",
+  "version": "0.1.0",
+  "description": "photo album",
+  "main": "server.js",
+  "dependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "startDev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideliason/photo_album.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "David Eliason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davideliason/photo_album/issues"
+  },
+  "homepage": "https://github.com/davideliason/photo_album#readme"
+}
