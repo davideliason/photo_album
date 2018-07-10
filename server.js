@@ -2,15 +2,9 @@ var http = require('http');
 var port = process.env.PORT || 3000;
 const fs = require('fs');
 
-function loadAlbumList(cb) {
-    fs.readdir("albums", (err, files) => {
-        if (err) {
-            cb(error);
-            return;
-        }
-        cb(null, files);
-    })
-}
+const loadalbumllist = require('./loadalbumlist');
+var loadAlbumList = loadalbumllist.loadAlbumList;
+
 
 function handle_requests(req, res) {
     console.log(`method: ${req.method} and url: ${req.url}`);
@@ -23,6 +17,7 @@ function handle_requests(req, res) {
             res.end(JSON.stringify(err));
             return;
         }
+
         console.log(`Number of album groups: ${data}`);
 
         res.writeHead(200, {

@@ -21,6 +21,7 @@
   ],
   "author": "David Eliason",
   "license": "MIT",
+  "private": true
   "bugs": {
     "url": "https://github.com/davideliason/photo_album/issues"
   },
